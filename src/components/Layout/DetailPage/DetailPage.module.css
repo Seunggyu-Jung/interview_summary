@@ -1,0 +1,19 @@
+.detail {
+  display: flex;
+
+  .navigate {
+    transition: 0.5s ease;
+    margin-right: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .active {
+    transition: 0.5s ease;
+    margin-right: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

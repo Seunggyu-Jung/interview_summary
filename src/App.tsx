@@ -1,5 +1,11 @@
+import DetailPages from 'pages/DetailPages';
+
 function App() {
-  return <div></div>;
+  return (
+    <>
+      <DetailPages />
+    </>
+  );
 }
 
 export default App;
