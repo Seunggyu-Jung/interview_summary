@@ -15,14 +15,18 @@ const isType = {
 
 export const Wrapper = styled.div`
   display: flex;
+  padding-top: 65px;
+  height: 100vh;
 `;
 
 export const Content = styled.div`
   display: flex;
+  height: 100vh;
 `;
 
 export const BtnSection = styled.section<IBtnSection>`
   ${props => isType[props.type]}
+  position: sticky;
   transition: 0.5s ease;
   display: flex;
   flex-direction: column;
