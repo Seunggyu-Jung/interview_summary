@@ -25,9 +25,11 @@ export default function DetailPage() {
       <Header></Header>
       <S.Wrapper>
         {isGuidePopupOpen && <GuidePopup />}
-        <Slider isActive={sliderActive} />
+        <S.SliderWrapper>
+          <Slider isActive={sliderActive} />
+        </S.SliderWrapper>
 
-        <S.Content>
+        <S.ButtonWrapper>
           <S.BtnSection type={sliderActive ? 'active' : 'default'}>
             <Button onClick={toggleSlider}>
               <img src={hamburger} alt="Menu" />
@@ -36,7 +38,9 @@ export default function DetailPage() {
               <img src={guide} alt="Guide" />
             </Button>
           </S.BtnSection>
+        </S.ButtonWrapper>
 
+        <S.Content>
           <div>
             <h1>자바스크립트란</h1>
             <section>
@@ -52,9 +56,10 @@ export default function DetailPage() {
               <p>QnA API 받아옴</p>
             </section>
           </div>
+          <Footer></Footer>
         </S.Content>
       </S.Wrapper>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </>
   );
 }

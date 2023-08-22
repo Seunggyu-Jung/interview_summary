@@ -10,8 +10,9 @@ const isType = {
     transition: transform 0.3s ease;
   `,
   active: css`
+    position: fixed;
     width: 200px;
-    height: 100vh;
+    height: 100%;
     background-color: antiquewhite;
     transform: translateX(0);
     transition: transform 0.5s ease;
