@@ -1,0 +1,18 @@
+[
+  {
+    "title": "HTML/CSS",
+    "items": [
+      { "title": "HTML/CSS1", "link": "link1" },
+      { "title": "HTML/CSS2", "link": "link2" },
+      { "title": "HTML/CSS3", "link": "link3" }
+    ]
+  },
+  {
+    "title": "JavaScript",
+    "items": [
+      { "title": "JavaScript1", "link": "link1" },
+      { "title": "JavaScript2", "link": "link2" },
+      { "title": "JavaScript3", "link": "link3" }
+    ]
+  }
+]
