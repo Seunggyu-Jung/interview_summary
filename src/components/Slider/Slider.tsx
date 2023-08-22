@@ -1,22 +1,20 @@
-import React, { useState } from 'react';
-import s from './Slider.module.css';
+import * as S from './Slider.styled';
 
 interface SliderProps {
   isActive: boolean;
-  onToggle: () => void;
 }
 
-export default function Slider({ isActive, onToggle }: SliderProps) {
+export default function Slider({ isActive }: SliderProps) {
   return (
     <>
-      <section className={`${s.wrapper} ${isActive ? s.active : ''}`}>
+      <S.Slider type={isActive ? 'active' : 'default'}>
         <h3>주제탐색</h3>
-        <nav className={s.nav}>
+        <S.Navigate>
           <p>정의</p>
           <p>내용</p>
           <p>QnA</p>
-        </nav>
-      </section>
+        </S.Navigate>
+      </S.Slider>
     </>
   );
 }

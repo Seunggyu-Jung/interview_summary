@@ -1,0 +1,6 @@
+.modal {
+  width: 100vh;
+  height: 100vh;
+  background-color: aqua;
+  z-index: 0;
+}
