@@ -1,4 +1,5 @@
 import { useTheme } from 'contexts/ThemeContext';
+import { Link } from 'react-router-dom';
 
 import * as S from './Header.styled';
 
@@ -8,7 +9,9 @@ export default function Header() {
   return (
     <S.Header>
       <S.HeaderContents>
-        <S.HeaderTitle>IT 집현전</S.HeaderTitle>
+        <S.HeaderTitle>
+          <Link to="/">IT 집현전</Link>
+        </S.HeaderTitle>
         <S.HeaderButtons>
           <button onClick={toggleDarkMode}>
             {isDarkMode ? 'Lightmode' : 'Darkmode'}
