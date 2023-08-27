@@ -23,13 +23,13 @@ export default function DetailPage() {
   return (
     <>
       <Header></Header>
-      <S.Wrapper>
+      <S.Wrapper type={sliderActive ? 'active' : 'default'}>
         {isGuidePopupOpen && <GuidePopup />}
-        <S.SliderWrapper>
-          <Slider isActive={sliderActive} />
+        <S.SliderWrapper type={sliderActive ? 'active' : 'default'}>
+          <Slider />
         </S.SliderWrapper>
 
-        <S.ButtonWrapper>
+        <div>
           <S.BtnSection type={sliderActive ? 'active' : 'default'}>
             <Button onClick={toggleSlider}>
               <img src={hamburger} alt="Menu" />
@@ -38,9 +38,9 @@ export default function DetailPage() {
               <img src={guide} alt="Guide" />
             </Button>
           </S.BtnSection>
-        </S.ButtonWrapper>
+        </div>
 
-        <S.Content>
+        <S.Content type={sliderActive ? 'active' : 'default'}>
           <div>
             <h1>자바스크립트란</h1>
             <section>
@@ -54,12 +54,35 @@ export default function DetailPage() {
             <section>
               <h2>QnA</h2>
               <p>QnA API 받아옴</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Placeat, sit. Quia temporibus voluptatibus provident blanditiis
+                et nam reiciendis deleniti accusamus quo labore molestiae aut,
+                at, possimus, sint tempora sit molestias.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                culpa, delectus sint eum odio ipsa quod nobis dolor tenetur
+                officia porro. Alias quisquam tempore vel nobis deserunt
+                excepturi minima voluptate?
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                culpa, delectus sint eum odio ipsa quod nobis dolor tenetur
+                officia porro. Alias quisquam tempore vel nobis deserunt
+                excepturi minima voluptate?
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                culpa, delectus sint eum odio ipsa quod nobis dolor tenetur
+                officia porro. Alias quisquam tempore vel nobis deserunt
+                excepturi minima voluptate?
+              </p>
             </section>
           </div>
-          <Footer></Footer>
         </S.Content>
       </S.Wrapper>
-      {/* <Footer></Footer> */}
+      <Footer />
     </>
   );
 }

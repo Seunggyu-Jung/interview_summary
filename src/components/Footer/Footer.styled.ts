@@ -1,5 +1,6 @@
 import { styled } from 'styled-components';
 
 export const Footer = styled.div`
-  margin-left: -200px;
+  border-top: 1px solid #eee;
+  padding: 20px 20px 0 220px;
 `;
