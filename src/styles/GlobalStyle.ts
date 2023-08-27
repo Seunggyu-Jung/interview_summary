@@ -6,4 +6,8 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.textColor};
   }
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
