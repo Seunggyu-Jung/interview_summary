@@ -1,17 +1,17 @@
 import React from 'react';
-
-import { Category } from 'types/dataTypes';
+import { IContent } from 'types/dataTypes';
 
 import * as S from './ListItem.styled';
+import { Link } from 'react-router-dom';
 
-const ListItem = ({ data }: { data: Category }) => {
+const ListItem = ({ data }: { data: IContent }) => {
   return (
     <div id={data.title}>
       <S.ListTitle>{data.title}</S.ListTitle>
       <S.List>
         {data.items.map(item => (
           <li>
-            <a href={item.link}>{item.title}</a>
+            <Link to={`/detail/${item.id}`}>{item.topic}</Link>
           </li>
         ))}
       </S.List>

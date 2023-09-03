@@ -45,6 +45,7 @@ const isContnet = {
   active: css`
     transform: translateX(0);
     transition: 0.3s ease;
+    margin-right: 200px;
   `,
 };
 
@@ -63,6 +64,7 @@ export const Content = styled.div<IBoolean>`
   ${props => isContnet[props.type]}
   display: flex;
   flex-direction: column;
+  /* max-width: 1200px; */
   z-index: -1;
 `;
 

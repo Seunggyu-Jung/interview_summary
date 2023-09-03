@@ -3,14 +3,15 @@ import React from 'react';
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
 import ListItem from 'components/ListItem/ListItem';
-import { Category } from 'types/dataTypes';
+
+import { IContent } from 'types/dataTypes';
 
 import * as S from './Main.styled';
 
-import mockData from '../../data/mockData.json';
+import contents from 'data/contents.json';
 
 const Main = () => {
-  const data: Category[] = mockData;
+  const data: IContent[] = contents;
 
   return (
     <>
