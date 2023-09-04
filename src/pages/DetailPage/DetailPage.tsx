@@ -7,10 +7,14 @@ import guide from 'image/guideBTN.svg';
 import GuidePopup from 'components/GuidePopup/GuidePopup';
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
+import content from 'data/contents.json';
+import { IContent } from 'types/dataTypes';
+import ContentItem from 'components/ContentItem/ContentItem';
 
 export default function DetailPage() {
   const [sliderActive, setSliderActive] = useState(false);
   const [isGuidePopupOpen, setIsGuidePopupOpen] = useState(false);
+  const Tcontent: IContent[] = content;
 
   function toggleSlider() {
     setSliderActive(!sliderActive);
@@ -42,42 +46,10 @@ export default function DetailPage() {
 
         <S.Content type={sliderActive ? 'active' : 'default'}>
           <div>
-            <h1>자바스크립트란</h1>
             <section>
-              <h2>정의</h2>
-              <p>정의에 대한 내용 API 받아옴</p>
-            </section>
-            <section>
-              <h2>내용</h2>
-              <p>내용 API 받아옴</p>
-            </section>
-            <section>
-              <h2>QnA</h2>
-              <p>QnA API 받아옴</p>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Placeat, sit. Quia temporibus voluptatibus provident blanditiis
-                et nam reiciendis deleniti accusamus quo labore molestiae aut,
-                at, possimus, sint tempora sit molestias.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-                culpa, delectus sint eum odio ipsa quod nobis dolor tenetur
-                officia porro. Alias quisquam tempore vel nobis deserunt
-                excepturi minima voluptate?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-                culpa, delectus sint eum odio ipsa quod nobis dolor tenetur
-                officia porro. Alias quisquam tempore vel nobis deserunt
-                excepturi minima voluptate?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-                culpa, delectus sint eum odio ipsa quod nobis dolor tenetur
-                officia porro. Alias quisquam tempore vel nobis deserunt
-                excepturi minima voluptate?
-              </p>
+              <div>
+                <ContentItem />
+              </div>
             </section>
           </div>
         </S.Content>
