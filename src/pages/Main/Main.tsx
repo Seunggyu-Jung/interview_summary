@@ -28,11 +28,6 @@ const Main = () => {
               <input type="text" />
               <button>Search</button>
             </div>
-            <h3>목차</h3>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea,
-              exercitationem!
-            </p>
           </S.InnerWrapper>
         </section>
         <section>

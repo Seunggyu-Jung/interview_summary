@@ -10,4 +10,13 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
+
+  p img {
+    width: 400px;
+    height: 400px;
+  }
+
+  pre {
+    background-color: gray; // 밝은 gray 로 조정
+  }
 `;
