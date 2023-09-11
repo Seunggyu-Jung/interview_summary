@@ -6,9 +6,9 @@ export default function Slider() {
       <S.Slider>
         <h3>주제탐색</h3>
         <S.Navigate>
-          <p>정의</p>
-          <p>내용</p>
-          <p>QnA</p>
+          <S.NavBtn href="#title">제목</S.NavBtn>
+          <S.NavBtn href="#content">내용</S.NavBtn>
+          <S.NavBtn href="#qna">QnA</S.NavBtn>
         </S.Navigate>
       </S.Slider>
     </>

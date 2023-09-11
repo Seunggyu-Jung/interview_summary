@@ -13,12 +13,12 @@ export default function ContentItem() {
   }
   return (
     <div>
-      <h2>{post?.title}</h2>
+      <h2 id="title">{post?.title}</h2>
       <section>{post?.topic}</section>
-      <section>
+      <section id="content">
         <ReactMarkdown>{post?.texture}</ReactMarkdown>
       </section>
-      <section>
+      <section id="qna">
         <ReactMarkdown>{post?.qna}</ReactMarkdown>
       </section>
     </div>

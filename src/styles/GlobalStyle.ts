@@ -17,6 +17,14 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   pre {
-    background-color: gray; // 밝은 gray 로 조정
+    background-color: #F3F4F6;
   }
+
+  h2 {
+  scroll-margin-top: 110px;
+ }
+
+ section {
+  scroll-margin-top: 110px;
+ }
 `;
