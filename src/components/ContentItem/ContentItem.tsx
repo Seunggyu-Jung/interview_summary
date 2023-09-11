@@ -18,6 +18,9 @@ export default function ContentItem() {
       <section>
         <ReactMarkdown>{post?.texture}</ReactMarkdown>
       </section>
+      <section>
+        <ReactMarkdown>{post?.qna}</ReactMarkdown>
+      </section>
     </div>
   );
 }

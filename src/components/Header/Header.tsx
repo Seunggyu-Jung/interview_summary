@@ -16,7 +16,9 @@ export default function Header() {
           <button onClick={toggleDarkMode}>
             {isDarkMode ? 'Lightmode' : 'Darkmode'}
           </button>
-          <button>Search</button>
+          <Link to={'/search'}>
+            <button>Search</button>
+          </Link>
         </S.HeaderButtons>
       </S.HeaderContents>
     </S.Header>

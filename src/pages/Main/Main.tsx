@@ -28,11 +28,6 @@ const Main = () => {
               <input type="text" />
               <button>Search</button>
             </div>
-            <h3>목차</h3>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea,
-              exercitationem!
-            </p>
           </S.InnerWrapper>
         </section>
         <section>
@@ -40,6 +35,7 @@ const Main = () => {
             <S.NavItem href="#tab-1">HTML/CSS</S.NavItem>
             <S.NavItem href="#tab-2">JavaScript</S.NavItem>
             <S.NavItem href="#tab-3">React</S.NavItem>
+            <S.NavItem href="#tab-4">CS</S.NavItem>
           </S.Nav>
           <S.InnerWrapper>
             {data.map(item => (
