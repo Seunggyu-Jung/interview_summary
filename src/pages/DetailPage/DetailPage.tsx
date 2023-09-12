@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import * as S from './DetailPage.styled';
 import Button from 'components/Button/Button';
 import Slider from 'components/Slider/Slider';
@@ -28,9 +30,15 @@ export default function DetailPage() {
     });
   };
 
+  const { pathname } = useLocation();
+
   function toggleSlider() {
     setSliderActive(!sliderActive);
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);

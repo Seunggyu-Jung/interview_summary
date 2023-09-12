@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
@@ -12,6 +13,12 @@ import contents from 'data/contents.json';
 
 const Main = () => {
   const data: IContent[] = contents;
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <>
