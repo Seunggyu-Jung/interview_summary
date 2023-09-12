@@ -8,6 +8,8 @@ export interface Category {
   items: Item[];
 }
 
+import { ReactNode } from 'react';
+
 export interface IContent {
   title: string;
   items: Content[];
@@ -19,4 +21,9 @@ export interface Content {
   topic: string;
   texture: string;
   qna: string;
+}
+
+export interface IModal {
+  children: ReactNode;
+  closeModal: () => void;
 }
