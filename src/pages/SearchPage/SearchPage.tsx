@@ -8,6 +8,7 @@ import Button from 'components/Button/Button';
 import Header from 'components/Header/Header';
 import ResultBox from 'components/ResultBox/ResultBox';
 import { useParams } from 'react-router-dom';
+import SearchInput from 'components/SearchInput/SearchInput';
 
 export default function SearchPage() {
   const { search } = useParams();
@@ -32,16 +33,19 @@ export default function SearchPage() {
       <S.Wrapper>
         <S.Title>검색 결과</S.Title>
         <S.Form>
-          <S.Input
+          <SearchInput
             type="text"
             placeholder="무엇이 궁금하신가요?"
             value={searchInput}
             onChange={e => setSearchInput(e.target.value)}
           />
-
-          <Link to={`/search/${searchInput}`} onClick={switchBox}>
-            <Button type="middle">찾기</Button>
-          </Link>
+          <Button
+            to={`/search/${searchInput}`}
+            onClick={switchBox}
+            type="middle"
+          >
+            찾기
+          </Button>
         </S.Form>
         {isRight && (
           <S.resultBox>

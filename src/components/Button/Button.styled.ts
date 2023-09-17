@@ -36,7 +36,9 @@ export const Button = styled.button<IButton>`
 
 export const StyledLink = styled(Link)<IButton>`
   box-sizing: border-box;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   border-radius: 10px;
   ${props => isType[props.type]}

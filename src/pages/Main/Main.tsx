@@ -10,6 +10,8 @@ import { IContent } from 'types/dataTypes';
 import * as S from './Main.styled';
 
 import contents from 'data/contents.json';
+import Button from 'components/Button/Button';
+import SearchInput from 'components/SearchInput/SearchInput';
 
 const Main = () => {
   const data: IContent[] = contents;
@@ -32,8 +34,8 @@ const Main = () => {
               Architecto, tempora.
             </p>
             <div>
-              <input type="text" />
-              <button>Search</button>
+              <SearchInput type="text" />
+              <Button type="middle">Search</Button>
             </div>
           </S.InnerWrapper>
         </section>
