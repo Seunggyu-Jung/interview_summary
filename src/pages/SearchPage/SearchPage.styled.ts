@@ -2,12 +2,11 @@ import { styled } from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 50%;
-  height: 100%;
   margin: auto;
 `;
 
 export const Title = styled.h1`
-  padding-bottom: 30px;
+  padding: 80px 0 20px;
   border-bottom: 1px solid #ddd;
 `;
 
@@ -27,4 +26,11 @@ export const Input = styled.input`
     border-color: #0982f0;
     outline: none;
   }
+`;
+
+export const resultBox = styled.section`
+  width: 100%;
+  height: 200px;
+  border: 1px solid black;
+  margin: 20px auto;
 `;

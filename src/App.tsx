@@ -14,7 +14,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Main />}></Route>
             <Route path="/detail/:id" element={<DetailPage />}></Route>
-            <Route path="/search" element={<SearchPage />}></Route>
+            <Route path="/search/" element={<SearchPage />}></Route>
+            <Route path="/search/:search" element={<SearchPage />}></Route>
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
