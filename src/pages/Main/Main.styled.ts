@@ -7,10 +7,15 @@ export const MainContentsWrapper = styled.main`
 export const Nav = styled.nav`
   position: sticky;
   top: 65px;
-  display: flex;
-  gap: 16px;
   background-color: ${({ theme }) => theme.backgroundColor};
   border-bottom: 2px solid #eee;
+`;
+
+export const NavLinkWrapper = styled.div`
+  max-width: 992px;
+  margin: 0 auto;
+  display: flex;
+  gap: 16px;
 `;
 
 export const NavItem = styled.a`

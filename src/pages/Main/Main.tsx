@@ -39,10 +39,12 @@ const Main = () => {
         </section>
         <section>
           <S.Nav>
-            <S.NavItem href="#tab-1">HTML/CSS</S.NavItem>
-            <S.NavItem href="#JavaScript">JavaScript</S.NavItem>
-            <S.NavItem href="#React">React</S.NavItem>
-            <S.NavItem href="#CS">CS</S.NavItem>
+            <S.NavLinkWrapper>
+              <S.NavItem href="#tab-1">HTML/CSS</S.NavItem>
+              <S.NavItem href="#JavaScript">JavaScript</S.NavItem>
+              <S.NavItem href="#React">React</S.NavItem>
+              <S.NavItem href="#CS">CS</S.NavItem>
+            </S.NavLinkWrapper>
           </S.Nav>
           <S.InnerWrapper>
             {data.map(item => (
