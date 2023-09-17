@@ -1,7 +1,12 @@
-import { useTheme } from 'contexts/ThemeContext';
 import { Link } from 'react-router-dom';
 
+import { useTheme } from 'contexts/ThemeContext';
+import Button from 'components/Button/Button';
+
 import * as S from './Header.styled';
+import lightmodIcon from '../../image/lightmode.svg';
+import darkmodeIcon from '../../image/darkmode.svg';
+import searchIcon from '../../image/search.svg';
 
 export default function Header() {
   const { isDarkMode, toggleDarkMode } = useTheme();
@@ -13,12 +18,15 @@ export default function Header() {
           <Link to="/">IT 집현전</Link>
         </S.HeaderTitle>
         <S.HeaderButtons>
-          <button onClick={toggleDarkMode}>
-            {isDarkMode ? 'Lightmode' : 'Darkmode'}
-          </button>
-          <Link to={'/search'}>
-            <button>Search</button>
-          </Link>
+          <Button onClick={toggleDarkMode}>
+            <img
+              src={isDarkMode ? lightmodIcon : darkmodeIcon}
+              alt="다크모드 토글"
+            />
+          </Button>
+          <Button to="/search">
+            <img src={searchIcon} alt="검색" />
+          </Button>
         </S.HeaderButtons>
       </S.HeaderContents>
     </S.Header>
