@@ -1,34 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import * as S from './DetailPage.styled';
 import Button from 'components/Button/Button';
 import Slider from 'components/Slider/Slider';
 import hamburger from 'image/hamburgerBTN.svg';
-import guide from 'image/guideBTN.svg';
-import GuidePopup from 'components/GuidePopup/GuidePopup';
+import up from 'image/arrowUp.svg';
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
-import content from 'data/contents.json';
-import { IContent } from 'types/dataTypes';
 import ContentItem from 'components/ContentItem/ContentItem';
 
 export default function DetailPage() {
   const [sliderActive, setSliderActive] = useState(false);
-  const [isGuidePopupOpen, setIsGuidePopupOpen] = useState(false);
-  const Tcontent: IContent[] = content;
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 400) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  const { pathname } = useLocation();
 
   function toggleSlider() {
     setSliderActive(!sliderActive);
   }
 
-  function toggleGuidePopup() {
-    setIsGuidePopupOpen(!isGuidePopupOpen);
-  }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <>
       <Header></Header>
       <S.Wrapper type={sliderActive ? 'active' : 'default'}>
-        {isGuidePopupOpen && <GuidePopup />}
         <S.SliderWrapper type={sliderActive ? 'active' : 'default'}>
           <Slider />
         </S.SliderWrapper>
@@ -38,9 +61,11 @@ export default function DetailPage() {
             <Button onClick={toggleSlider}>
               <img src={hamburger} alt="Menu" />
             </Button>
-            <Button onClick={toggleGuidePopup}>
-              <img src={guide} alt="Guide" />
-            </Button>
+            {isVisible && (
+              <Button onClick={scrollToTop}>
+                <img src={up} alt="up" />
+              </Button>
+            )}
           </S.BtnSection>
         </div>
 

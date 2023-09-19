@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
@@ -12,6 +13,12 @@ import contents from 'data/contents.json';
 
 const Main = () => {
   const data: IContent[] = contents;
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <>
@@ -33,9 +40,9 @@ const Main = () => {
         <section>
           <S.Nav>
             <S.NavItem href="#tab-1">HTML/CSS</S.NavItem>
-            <S.NavItem href="#tab-2">JavaScript</S.NavItem>
-            <S.NavItem href="#tab-3">React</S.NavItem>
-            <S.NavItem href="#tab-4">CS</S.NavItem>
+            <S.NavItem href="#JavaScript">JavaScript</S.NavItem>
+            <S.NavItem href="#React">React</S.NavItem>
+            <S.NavItem href="#CS">CS</S.NavItem>
           </S.Nav>
           <S.InnerWrapper>
             {data.map(item => (
