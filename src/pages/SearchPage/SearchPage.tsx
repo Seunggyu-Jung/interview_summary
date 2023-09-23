@@ -44,7 +44,7 @@ export default function SearchPage() {
         </S.Form>
         {isRight && (
           <S.resultBox>
-            <ResultBox />
+            <ResultBox search={search || ''} />
           </S.resultBox>
         )}
       </S.Wrapper>

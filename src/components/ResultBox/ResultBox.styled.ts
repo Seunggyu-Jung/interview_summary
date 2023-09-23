@@ -15,3 +15,7 @@ export const ResultTexture = styled.div`
   padding-top: 10px;
   display: block;
 `;
+
+export const Mark = styled.mark`
+  background: antiquewhite;
+`;

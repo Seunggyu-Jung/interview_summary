@@ -1,14 +1,26 @@
 import React from 'react';
 import data from 'data/contents.json';
-import { useParams } from 'react-router-dom';
 import * as S from './ResultBox.styled';
 
-export default function ResultBox() {
-  const { search = '' } = useParams();
-
+export default function ResultBox({ search }: { search: string }) {
   const resultArr = data[0].items.filter(
     item => item.topic.includes(search) || item.texture.includes(search)
   );
+
+  const highlightText = (text: string, searchKeyword: string) => {
+    const regex = new RegExp(searchKeyword, 'gi');
+    const parts = text.split(regex);
+    return parts.map((part, index) =>
+      index !== parts.length - 1 ? (
+        <>
+          {part}
+          <S.Mark>{searchKeyword}</S.Mark>
+        </>
+      ) : (
+        part
+      )
+    );
+  };
 
   if (resultArr.length === 0) {
     return (
@@ -26,9 +38,12 @@ export default function ResultBox() {
             {result?.topic}
           </S.ResultLink>
           <S.ResultTexture>
-            {result?.texture
-              .slice(0, 300)
-              .replace(/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/gi, '') + '...'}
+            {highlightText(
+              result?.texture
+                .slice(0, 300)
+                .replace(/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/gi, '') + '...',
+              search
+            )}
           </S.ResultTexture>
         </div>
       ))}
