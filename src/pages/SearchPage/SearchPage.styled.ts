@@ -16,18 +16,6 @@ export const Form = styled.form`
   align-items: center;
 `;
 
-export const Input = styled.input`
-  width: 70%;
-  height: 50px;
-  margin-right: 30px;
-  padding: 0 10px;
-
-  &:focus {
-    border-color: #0982f0;
-    outline: none;
-  }
-`;
-
 export const resultBox = styled.section`
   width: 100%;
   height: 200px;

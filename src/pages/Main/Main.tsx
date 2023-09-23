@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
@@ -10,15 +9,11 @@ import { IContent } from 'types/dataTypes';
 import * as S from './Main.styled';
 
 import contents from 'data/contents.json';
+import Button from 'components/Button/Button';
+import SearchInput from 'components/SearchInput/SearchInput';
 
 const Main = () => {
   const data: IContent[] = contents;
-
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
 
   return (
     <>
@@ -28,21 +23,23 @@ const Main = () => {
           <S.InnerWrapper>
             <h2>IT 집현전</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Architecto, tempora.
+              CS스터디 IT집현전에서 프론트엔드 기술 면접에 자주 나오는 질문들을
+              공부하며 정리한 공간입니다.
             </p>
             <div>
-              <input type="text" />
-              <button>Search</button>
+              <SearchInput type="text" />
+              <Button type="middle">Search</Button>
             </div>
           </S.InnerWrapper>
         </section>
         <section>
           <S.Nav>
-            <S.NavItem href="#tab-1">HTML/CSS</S.NavItem>
-            <S.NavItem href="#JavaScript">JavaScript</S.NavItem>
-            <S.NavItem href="#React">React</S.NavItem>
-            <S.NavItem href="#CS">CS</S.NavItem>
+            <S.NavLinkWrapper>
+              <S.NavItem href="#tab-1">HTML/CSS</S.NavItem>
+              <S.NavItem href="#JavaScript">JavaScript</S.NavItem>
+              <S.NavItem href="#React">React</S.NavItem>
+              <S.NavItem href="#CS">CS</S.NavItem>
+            </S.NavLinkWrapper>
           </S.Nav>
           <S.InnerWrapper>
             {data.map(item => (

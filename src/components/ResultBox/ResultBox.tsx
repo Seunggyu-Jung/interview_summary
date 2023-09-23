@@ -1,14 +1,28 @@
 import React from 'react';
 import data from 'data/contents.json';
-import { useParams } from 'react-router-dom';
 import * as S from './ResultBox.styled';
 
-export default function ResultBox() {
-  const { search } = useParams();
+export default function ResultBox({ search }: { search: string }) {
+  const resultArr = data[0].items.filter(
+    item => item.topic.includes(search) || item.texture.includes(search)
+  );
 
-  const result = data[0].items.find(item => item.topic === search);
+  const highlightText = (text: string, searchKeyword: string) => {
+    const regex = new RegExp(searchKeyword, 'gi');
+    const parts = text.split(regex);
+    return parts.map((part, index) =>
+      index !== parts.length - 1 ? (
+        <>
+          {part}
+          <S.Mark>{searchKeyword}</S.Mark>
+        </>
+      ) : (
+        part
+      )
+    );
+  };
 
-  if (!result) {
+  if (resultArr.length === 0) {
     return (
       <div>
         <p>검색하신 내용은 없는 내용입니다.</p>
@@ -17,13 +31,22 @@ export default function ResultBox() {
   }
 
   return (
-    <div>
-      <S.ResultLink to={`/detail/${result?.id}`}>{result?.topic}</S.ResultLink>
-      <S.ResultTexture>
-        {result?.texture
-          .slice(0, 300)
-          .replace(/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/gi, '') + '...'}
-      </S.ResultTexture>
-    </div>
+    <>
+      {resultArr.map(result => (
+        <div>
+          <S.ResultLink to={`/detail/${result?.id}`}>
+            {result?.topic}
+          </S.ResultLink>
+          <S.ResultTexture>
+            {highlightText(
+              result?.texture
+                .slice(0, 300)
+                .replace(/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/gi, '') + '...',
+              search
+            )}
+          </S.ResultTexture>
+        </div>
+      ))}
+    </>
   );
 }

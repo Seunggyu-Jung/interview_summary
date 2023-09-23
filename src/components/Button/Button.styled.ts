@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { styled, css } from 'styled-components';
 
 interface IButton {
@@ -27,6 +28,18 @@ const isType = {
 };
 
 export const Button = styled.button<IButton>`
+  border-radius: 10px;
+  ${props => isType[props.type]}
+  border: 0px;
+  padding: 10px;
+`;
+
+export const StyledLink = styled(Link)<IButton>`
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
   border-radius: 10px;
   ${props => isType[props.type]}
   border: 0px;
