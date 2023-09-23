@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from 'contexts/ThemeContext';
+import ScrollToTop from 'components/ScrollToTop/ScrollToTop';
 import Main from 'pages/Main/Main';
 import DetailPage from 'pages/DetailPage/DetailPage';
 import SearchPage from 'pages/SearchPage/SearchPage';
@@ -11,6 +12,7 @@ function App() {
       <ThemeProvider>
         <GlobalStyle />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Main />}></Route>
             <Route path="/detail/:id" element={<DetailPage />}></Route>
