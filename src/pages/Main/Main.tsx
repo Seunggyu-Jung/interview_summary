@@ -23,8 +23,8 @@ const Main = () => {
           <S.InnerWrapper>
             <h2>IT 집현전</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Architecto, tempora.
+              CS스터디 IT집현전에서 프론트엔드 기술 면접에 자주 나오는 질문들을
+              공부하며 정리한 공간입니다.
             </p>
             <div>
               <SearchInput type="text" />
