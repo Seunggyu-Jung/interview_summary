@@ -33,6 +33,12 @@ export const InnerWrapper = styled.div`
   border-bottom: 1px solid #eee;
 `;
 
+export const Form = styled.form`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const ListItem = styled.div`
   scroll-margin-top: 110px;
 `;
