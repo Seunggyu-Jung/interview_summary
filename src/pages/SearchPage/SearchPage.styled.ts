@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -5,15 +6,19 @@ export const Wrapper = styled.div`
   margin: auto;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.button`
+  margin: 0;
   padding: 80px 0 20px;
   border-bottom: 1px solid #ddd;
+  font-weight: bold;
+  font-size: 30px;
 `;
 
 export const Form = styled.form`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 30px 0;
 `;
 
 export const resultBox = styled.section`
