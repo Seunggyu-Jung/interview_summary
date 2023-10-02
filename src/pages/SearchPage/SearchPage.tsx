@@ -6,11 +6,13 @@ import * as S from './SearchPage.styled';
 import Button from 'components/Button/Button';
 import Header from 'components/Header/Header';
 import ResultBox from 'components/ResultBox/ResultBox';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import SearchInput from 'components/SearchInput/SearchInput';
 
 export default function SearchPage() {
   const { search } = useParams();
+
+  const navigate = useNavigate();
 
   const [searchInput, setSearchInput] = useState(search || '');
 
@@ -30,8 +32,16 @@ export default function SearchPage() {
     <>
       <Header></Header>
       <S.Wrapper>
-        <S.Title>검색 결과</S.Title>
-        <S.Form onSubmit={e => e.preventDefault()}>
+        <S.Title
+          onClick={e => {
+            navigate('/search');
+            setIsRight(false);
+            setSearchInput('');
+          }}
+        >
+          검색 결과
+        </S.Title>
+        <S.Form onSubmit={e => navigate(`/search/${searchInput}`)}>
           <SearchInput
             type="text"
             placeholder="무엇이 궁금하신가요?"
@@ -42,11 +52,7 @@ export default function SearchPage() {
             찾기
           </Button>
         </S.Form>
-        {isRight && (
-          <S.resultBox>
-            <ResultBox search={search || ''} />
-          </S.resultBox>
-        )}
+        {isRight && <ResultBox search={search || ''} />}
       </S.Wrapper>
     </>
   );
