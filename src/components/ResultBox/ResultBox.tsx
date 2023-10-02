@@ -33,7 +33,7 @@ export default function ResultBox({ search }: { search: string }) {
   return (
     <>
       {resultArr.map(result => (
-        <div>
+        <S.ResultBox>
           <S.ResultLink to={`/detail/${result?.id}`}>
             {result?.topic}
           </S.ResultLink>
@@ -45,7 +45,7 @@ export default function ResultBox({ search }: { search: string }) {
               search
             )}
           </S.ResultTexture>
-        </div>
+        </S.ResultBox>
       ))}
     </>
   );
