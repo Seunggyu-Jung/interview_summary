@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
@@ -13,6 +14,8 @@ import Button from 'components/Button/Button';
 import SearchInput from 'components/SearchInput/SearchInput';
 
 const Main = () => {
+  const navigate = useNavigate();
+  const [searchInput, setSearchInput] = useState('');
   const data: IContent[] = contents;
 
   return (
@@ -26,10 +29,20 @@ const Main = () => {
               CS스터디 IT집현전에서 프론트엔드 기술 면접에 자주 나오는 질문들을
               공부하며 정리한 공간입니다.
             </p>
-            <div>
-              <SearchInput type="text" />
+            <S.Form
+              onSubmit={e => {
+                e.preventDefault();
+                navigate(`/search/${searchInput}`);
+              }}
+            >
+              <SearchInput
+                type="text"
+                placeholder="무엇이 궁금하신가요?"
+                value={searchInput}
+                onChange={e => setSearchInput(e.target.value)}
+              />
               <Button type="middle">Search</Button>
-            </div>
+            </S.Form>
           </S.InnerWrapper>
         </section>
         <section>
