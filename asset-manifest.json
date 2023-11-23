@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/interview_page_test/static/css/main.e6c13ad2.css",
+    "main.js": "/interview_page_test/static/js/main.0ac10e45.js",
+    "static/media/icon-github.svg": "/interview_page_test/static/media/icon-github.72909fff0b60fd03f2ab66bcba1340f4.svg",
+    "static/media/arrowUp.svg": "/interview_page_test/static/media/arrowUp.8c308f8d8050aafb287c91c3144a30f3.svg",
+    "index.html": "/interview_page_test/index.html",
+    "static/media/hamburgerBTN.svg": "/interview_page_test/static/media/hamburgerBTN.8ceaa681227d78a091e5061ed7649a32.svg",
+    "static/media/lightmode.svg": "/interview_page_test/static/media/lightmode.382203f7bce59d7eb6d2f462b7b0ec13.svg",
+    "static/media/darkmode.svg": "/interview_page_test/static/media/darkmode.9047a58e8a4aa55fb9d8e80aac7a0549.svg",
+    "static/media/search.svg": "/interview_page_test/static/media/search.ecdf8ec7c4f054fbcbfe4af53be7c8a2.svg",
+    "main.e6c13ad2.css.map": "/interview_page_test/static/css/main.e6c13ad2.css.map",
+    "main.0ac10e45.js.map": "/interview_page_test/static/js/main.0ac10e45.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.0ac10e45.js"
+  ]
+}
