@@ -1,6 +1,8 @@
 import { styled } from 'styled-components';
 
 export const Footer = styled.div`
+  width: 100%;
+  margin: auto;
   display: flex;
   text-align: center;
   justify-content: space-around;
